@@ -17,11 +17,9 @@
 -- Additional Comments:
 -- 
 ----------------------------------------------------------------------------------
-
-
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use work.package_dsed.all;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE work.package_dsed.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -32,29 +30,27 @@ use work.package_dsed.all;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity dsed_audio is
-Port (
-clk_100Mhz : in std_logic;
-reset: in std_logic;
---Control ports
-BTNL: in STD_LOGIC;
-BTNC: in STD_LOGIC;
-BTNR: in STD_LOGIC;
-SW0: in STD_LOGIC;
-SW1: in STD_LOGIC;
---To/From the microphone
-micro_clk : out STD_LOGIC;
-micro_data : in STD_LOGIC;
-micro_LR : out STD_LOGIC;
---To/From the mini-jack
-jack_sd : out STD_LOGIC;
-jack_pwm : out STD_LOGIC
-);
-end dsed_audio;
+ENTITY dsed_audio IS
+    PORT (
+        clk_100Mhz : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        --Control ports
+        BTNL : IN STD_LOGIC;
+        BTNC : IN STD_LOGIC;
+        BTNR : IN STD_LOGIC;
+        SW0 : IN STD_LOGIC;
+        SW1 : IN STD_LOGIC;
+        --To/From the microphone
+        micro_clk : OUT STD_LOGIC;
+        micro_data : IN STD_LOGIC;
+        micro_LR : OUT STD_LOGIC;
+        --To/From the mini-jack
+        jack_sd : OUT STD_LOGIC;
+        jack_pwm : OUT STD_LOGIC
+    );
+END dsed_audio;
 
-architecture Behavioral of dsed_audio is
+ARCHITECTURE Behavioral OF dsed_audio IS
 
-begin
-
-
-end Behavioral;
+BEGIN
+END Behavioral;

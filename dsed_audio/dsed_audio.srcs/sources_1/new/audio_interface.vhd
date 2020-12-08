@@ -17,11 +17,9 @@
 -- Additional Comments:
 -- 
 ----------------------------------------------------------------------------------
-
-
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use work.package_dsed.all;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE work.package_dsed.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -32,31 +30,30 @@ use work.package_dsed.all;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity audio_interface is
-Port ( clk_12megas : in STD_LOGIC;
-reset : in STD_LOGIC;
---Recording ports
---To/From the controller
-record_enable: in STD_LOGIC;
-sample_out: out STD_LOGIC_VECTOR (sample_size-1 downto 0);
-sample_out_ready: out STD_LOGIC;
---To/From the microphone
-micro_clk : out STD_LOGIC;
-micro_data : in STD_LOGIC;
-micro_LR : out STD_LOGIC;
---Playing ports
---To/From the controller
-play_enable: in STD_LOGIC;
-sample_in: in std_logic_vector(sample_size-1 downto 0);
-sample_request: out std_logic;
---To/From the mini-jack
-jack_sd : out STD_LOGIC;
-jack_pwm : out STD_LOGIC);
-end audio_interface;
+ENTITY audio_interface IS
+    PORT (
+        clk_12megas : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        --Recording ports
+        --To/From the controller
+        record_enable : IN STD_LOGIC;
+        sample_out : OUT STD_LOGIC_VECTOR (sample_size - 1 DOWNTO 0);
+        sample_out_ready : OUT STD_LOGIC;
+        --To/From the microphone
+        micro_clk : OUT STD_LOGIC;
+        micro_data : IN STD_LOGIC;
+        micro_LR : OUT STD_LOGIC;
+        --Playing ports
+        --To/From the controller
+        play_enable : IN STD_LOGIC;
+        sample_in : IN STD_LOGIC_VECTOR(sample_size - 1 DOWNTO 0);
+        sample_request : OUT STD_LOGIC;
+        --To/From the mini-jack
+        jack_sd : OUT STD_LOGIC;
+        jack_pwm : OUT STD_LOGIC);
+END audio_interface;
 
-architecture Behavioral of audio_interface is
+ARCHITECTURE Behavioral OF audio_interface IS
 
-begin
-
-
-end Behavioral;
+BEGIN
+END Behavioral;

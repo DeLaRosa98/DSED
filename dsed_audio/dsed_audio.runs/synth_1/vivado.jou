@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Dec  8 17:22:25 2020
+# Process ID: 12616
+# Current directory: C:/Users/PdlRdV/Desktop/Uni/DSED/Proyecto/DSED/dsed_audio/dsed_audio.runs/synth_1
+# Command line: vivado.exe -log FSMD_microphone.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FSMD_microphone.tcl
+# Log file: C:/Users/PdlRdV/Desktop/Uni/DSED/Proyecto/DSED/dsed_audio/dsed_audio.runs/synth_1/FSMD_microphone.vds
+# Journal file: C:/Users/PdlRdV/Desktop/Uni/DSED/Proyecto/DSED/dsed_audio/dsed_audio.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source FSMD_microphone.tcl -notrace
