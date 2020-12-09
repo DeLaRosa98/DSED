@@ -71,7 +71,7 @@ ARCHITECTURE Behavioral OF tb_FSMD_microphone IS
     SIGNAL en_2_cycles : STD_LOGIC := '0';
 
     -- Constant time
-    CONSTANT clk_period : TIME := 166.66 ns;
+    CONSTANT clk_period : TIME := 83.33 ns;
 
     --Simulation signals
     SIGNAL a, b, c : STD_LOGIC := '1';
@@ -101,7 +101,7 @@ BEGIN
     reset_process : PROCESS
     BEGIN
         reset <= '1';
-        WAIT FOR 15 ns;
+        WAIT FOR 100 ns;
         reset <= '0';
         WAIT;
     END PROCESS;

@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 12/08/2020 05:30:54 PM
+-- Create Date: 12/09/2020 11:55:13 AM
 -- Design Name: 
--- Module Name: tb_en_4_cycles - Behavioral
+-- Module Name: tb_pwm - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -33,11 +33,11 @@ USE work.package_dsed.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-ENTITY tb_en_4_cycles IS
+ENTITY tb_pwm IS
     --  Port ( );
-END tb_en_4_cycles;
+END tb_pwm;
 
-ARCHITECTURE Behavioral OF tb_en_4_cycles IS
+ARCHITECTURE Behavioral OF tb_pwm IS
 
     COMPONENT en_4_cycles IS
         PORT (
@@ -48,18 +48,32 @@ ARCHITECTURE Behavioral OF tb_en_4_cycles IS
             en_4_cycles : OUT STD_LOGIC);
     END COMPONENT;
 
-    -- Inputs signals
+    COMPONENT pwm IS
+        PORT (
+            clk_12megas : IN STD_LOGIC;
+            reset : IN STD_LOGIC;
+            en_2_cycles : IN STD_LOGIC;
+            sample_in : IN STD_LOGIC_VECTOR(sample_size - 1 DOWNTO 0);
+            sample_request : OUT STD_LOGIC;
+            pwm_pulse : OUT STD_LOGIC
+        );
+    END COMPONENT;
+
+    -- Input signals
     SIGNAL clock_12megas : STD_LOGIC := '1';
     SIGNAL rst : STD_LOGIC := '0';
+    SIGNAL enable_2_cycles : STD_LOGIC := '1';
+    SIGNAL smpl_in : STD_LOGIC_VECTOR(sample_size - 1 DOWNTO 0);
 
     -- Output signals
+    SIGNAL smpl_rqst : STD_LOGIC := '1';
+    SIGNAL pwm_pls : STD_LOGIC := '1';
     SIGNAL clock_3megas : STD_LOGIC := '1';
-    SIGNAL enable_2_cycles : STD_LOGIC := '1';
     SIGNAL enable_4_cycles : STD_LOGIC := '1';
 
     -- Constant time
     CONSTANT clk_period : TIME := 83.33 ns;
-
+    CONSTANT wait_time : TIME := 200 ns;
 BEGIN
 
     UUT_enables : en_4_cycles
@@ -69,6 +83,16 @@ BEGIN
         clk_3megas => clock_3megas,
         en_2_cycles => enable_2_cycles,
         en_4_cycles => enable_4_cycles
+    );
+
+    UUT_pwm : pwm
+    PORT MAP(
+        clk_12megas => clock_12megas,
+        reset => rst,
+        en_2_cycles => enable_2_cycles,
+        sample_in => smpl_in,
+        sample_request => smpl_rqst,
+        pwm_pulse => pwm_pls
     );
 
     reset_process : PROCESS
@@ -85,6 +109,22 @@ BEGIN
         WAIT FOR clk_period/2;
         clock_12megas <= '1';
         WAIT FOR clk_period/2;
+    END PROCESS;
+
+    SAMPLE_IN_process : PROCESS
+    BEGIN
+        smpl_in <= "00000000";
+        WAIT FOR wait_time;
+        smpl_in <= "00001111";
+        WAIT FOR wait_time;
+        smpl_in <= "11110000";
+        WAIT FOR wait_time;
+        smpl_in <= "10101010";
+        WAIT FOR wait_time;
+        smpl_in <= "01010101";
+        WAIT FOR wait_time;
+        smpl_in <= "11111111";
+        WAIT FOR wait_time;
     END PROCESS;
 
 END Behavioral;

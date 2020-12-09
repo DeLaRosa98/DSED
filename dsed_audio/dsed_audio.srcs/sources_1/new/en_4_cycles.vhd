@@ -56,8 +56,7 @@ BEGIN
             temp3 <= '0';
             count4 <= 1;
             temp4 <= '0';
-        END IF;
-        IF (clk_12megas'event AND clk_12megas = '0') THEN
+        ELSIF (clk_12megas'event AND clk_12megas = '0') THEN
             count2 <= count2 + 1;
             temp2 <= '1';
             count4 <= count4 - 1;

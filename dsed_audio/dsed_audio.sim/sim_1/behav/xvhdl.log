@@ -1,5 +1,7 @@
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/PdlRdV/Desktop/Uni/DSED/Proyecto/DSED/dsed_audio/dsed_audio.srcs/sources_1/new/package_dsed.vhd" into library xil_defaultlib
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/PdlRdV/Desktop/Uni/DSED/Proyecto/DSED/dsed_audio/dsed_audio.srcs/sources_1/new/en_4_cycles.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity en_4_cycles
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/PdlRdV/Desktop/Uni/DSED/Proyecto/DSED/dsed_audio/dsed_audio.srcs/sim_1/new/tb_en_4_cycles.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity tb_en_4_cycles
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/PdlRdV/Desktop/Uni/DSED/Proyecto/DSED/dsed_audio/dsed_audio.srcs/sources_1/new/pwm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity pwm
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/PdlRdV/Desktop/Uni/DSED/Proyecto/DSED/dsed_audio/dsed_audio.srcs/sim_1/new/tb_pwm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_pwm
