@@ -49,13 +49,13 @@ ARCHITECTURE Behavioral OF tb_en_4_cycles IS
     END COMPONENT;
 
     -- Inputs signals
-    SIGNAL clk_12megas : STD_LOGIC := '1';
-    SIGNAL reset : STD_LOGIC := '0';
+    SIGNAL clock_12megas : STD_LOGIC := '1';
+    SIGNAL rst : STD_LOGIC := '0';
     
     -- Output signals
-    SIGNAL clk_3megas : STD_LOGIC := '0';
-    SIGNAL en_2_cycles : STD_LOGIC := '0';
-    SIGNAL en_4_cycles : STD_LOGIC := '0';
+    SIGNAL clock_3megas : STD_LOGIC := '1';
+    SIGNAL enable_2_cycles : STD_LOGIC := '1';
+    SIGNAL enable_4_cycles : STD_LOGIC := '1';
 
     -- Constant time
     CONSTANT clk_period : TIME := 166.66 ns;
@@ -64,26 +64,26 @@ BEGIN
 
     UUT_enables : en_4_cycles
     PORT MAP(
-        clk_12megas => clk_12megas,
-        reset => reset,
-        clk_3megas => clk_3megas,
-        en_2_cycles => en_2_cycles,
-        en_4_cycles => en_4_cycles
+        clk_12megas => clock_12megas,
+        reset => rst,
+        clk_3megas => clock_3megas,
+        en_2_cycles => enable_2_cycles,
+        en_4_cycles => enable_4_cycles
     );
 
     reset_process : PROCESS
     BEGIN
-        reset <= '1';
-        WAIT FOR 15 ns;
-        reset <= '0';
+        rst <= '1';
+        WAIT FOR 100 ns;
+        rst <= '0';
         WAIT;
     END PROCESS;
 
     CLK_process : PROCESS
     BEGIN
-        clk_12megas <= '0';
+        clock_12megas <= '0';
         WAIT FOR clk_period/2;
-        clk_12megas <= '1';
+        clock_12megas <= '1';
         WAIT FOR clk_period/2;
     END PROCESS;
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1607444543">
-  <File Type="RDS-PROPCONSTRS" Name="FSMD_microphone_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="FSMD_microphone.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="FSMD_microphone_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="FSMD_microphone.vds"/>
   <File Type="RDS-UTIL" Name="FSMD_microphone_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="FSMD_microphone_utilization_synth.pb"/>

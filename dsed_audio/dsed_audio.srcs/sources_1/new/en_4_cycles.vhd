@@ -54,21 +54,21 @@ BEGIN
             count2 <= 0;
             temp2 <= '0';
             temp3 <= '0';
-            count4 <= 0;
+            count4 <= 1;
             temp4 <= '0';
         END IF;
-        IF (clk_12megas'event AND clk_12megas = '1') THEN
+        IF (clk_12megas'event AND clk_12megas = '0') THEN
             count2 <= count2 + 1;
-            temp2 <= '0';
-            count4 <= count4 + 1;
+            temp2 <= '1';
+            count4 <= count4 - 1;
             temp4 <= '0';
-            IF (count2 = 2) THEN
+            IF (count2 = 1) THEN
                 count2 <= 0;
-                temp2 <= '1';
+                temp2 <= '0';
                 temp3 <= NOT temp3;
             END IF;
-            IF (count4 = 4) THEN
-                count4 <= 0;
+            IF (count4 = 0) THEN
+                count4 <= 3;
                 temp4 <= '1';
             END IF;
         END IF;
