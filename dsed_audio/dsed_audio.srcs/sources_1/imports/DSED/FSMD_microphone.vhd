@@ -37,7 +37,7 @@ ENTITY FSMD_microphone IS
         reset : IN STD_LOGIC;
         enable_4_cycles : IN STD_LOGIC;
         micro_data : IN STD_LOGIC;
-        sample_out : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        sample_out : OUT STD_LOGIC_VECTOR (sample_size - 1 DOWNTO 0);
         sample_out_ready : OUT STD_LOGIC);
 END FSMD_microphone;
 ARCHITECTURE Behavioral OF FSMD_microphone IS
