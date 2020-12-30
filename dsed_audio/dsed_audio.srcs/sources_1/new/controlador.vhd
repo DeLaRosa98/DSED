@@ -78,13 +78,6 @@ architecture Behavioral of controlador is
         clk_out1: out std_logic);
   END COMPONENT;
 
-
-  --Input signals
-  signal record_enable    : std_logic := '1';
-  signal play_enable      : std_logic := '1';
-  signal sample_in        : std_logic_vector(sample_size-1 downto 0) := (others => '0');
-
-
   --Output signals
   signal clock_12megas: std_logic;
   signal s_sample        : std_logic_vector(sample_size-1 downto 0) := (others => '0');
@@ -103,13 +96,13 @@ begin
   PORT MAP(
     clk_12megas         => clock_12megas,
     reset               => reset,
-    record_enable       => record_enable,
+    record_enable       => '1',
     sample_out          => s_sample,
     sample_out_ready    => sample_out_ready,
     micro_clk           => micro_clk,
     micro_data          => micro_data,
     micro_LR            => micro_LR,
-    play_enable         => play_enable,
+    play_enable         => '1',
     sample_in           => s_sample,
     sample_request      => sample_request,
     jack_sd             => jack_sd,

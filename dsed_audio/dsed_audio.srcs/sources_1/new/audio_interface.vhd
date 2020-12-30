@@ -83,9 +83,6 @@ ARCHITECTURE Behavioral OF audio_interface IS
       en_4_cycles : OUT STD_LOGIC);
    END COMPONENT;
 
-  --Input signals
-  SIGNAL clock_12megas : STD_LOGIC := '1';
-
   --Output signals
   SIGNAL and_enable_2_cycles, enable_2_cycles : STD_LOGIC := '1';
   SIGNAL and_enable_4_cycles, enable_4_cycles : STD_LOGIC := '1';
@@ -95,7 +92,7 @@ BEGIN
 
   UUT_pwm : pwm
     PORT MAP(
-      clk_12megas => clock_12megas,
+      clk_12megas => clk_12megas,
       reset => reset,
       en_2_cycles => and_enable_2_cycles,
       sample_in => sample_in,
@@ -105,7 +102,7 @@ BEGIN
 
 UUT_microphone : FSMD_microphone
   PORT MAP(
-    clk_12megas => clock_12megas,
+    clk_12megas => clk_12megas,
     reset => reset,
     enable_4_cycles => and_enable_4_cycles,
     micro_data => micro_data,
@@ -115,7 +112,7 @@ UUT_microphone : FSMD_microphone
 
 UUT_enables : en_4_cycles
   PORT MAP(
-    clk_12megas => clock_12megas,
+    clk_12megas => clk_12megas,
     reset => reset,
     clk_3megas => micro_clk,
     en_2_cycles => enable_2_cycles,
