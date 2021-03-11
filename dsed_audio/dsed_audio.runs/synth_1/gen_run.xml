@@ -10,8 +10,10 @@
   <File Type="VDS-TIMING-PB" Name="FSMD_microphone_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/package_dsed.vhd">
+    <File Path="$PSRCDIR/sources_1/imports/new/package_dsed.vhd">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/package_dsed.vhd"/>
+        <Attr Name="ImportTime" Val="1610977756"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -24,23 +26,29 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/dsed_audio.vhd">
+    <File Path="$PSRCDIR/sources_1/imports/new/dsed_audio.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/dsed_audio.vhd"/>
+        <Attr Name="ImportTime" Val="1610977743"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/audio_interface.vhd">
+    <File Path="$PSRCDIR/sources_1/imports/new/audio_interface.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/audio_interface.vhd"/>
+        <Attr Name="ImportTime" Val="1610977735"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/en_4_cycles.vhd">
+    <File Path="$PSRCDIR/sources_1/imports/new/en_4_cycles.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/en_4_cycles.vhd"/>
+        <Attr Name="ImportTime" Val="1610977753"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
