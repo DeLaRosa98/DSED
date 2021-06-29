@@ -87,7 +87,7 @@ begin
         jack_pwm => jack_pwm
     );
 
-    clk <= NOT clk AFTER clk_period/2;
+    clk_100Mhz <= NOT clk_100Mhz AFTER clk_period/2;
 
     reproduccion: process
     begin
@@ -116,8 +116,8 @@ begin
         WAIT FOR 100 ns;
         a <= NOT a AFTER 1300 ns;
         b <= NOT b AFTER 2100 ns;
-        d <= NOT d AFTER 3700 ns;
-        micro_data <= a XOR b XOR d;
+        c <= NOT c AFTER 3700 ns;
+        micro_data <= a XOR b XOR c;
     END PROCESS;
 
     grabar: process
