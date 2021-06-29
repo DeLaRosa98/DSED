@@ -92,7 +92,7 @@ begin
     reproduccion: process
     begin
       reset <= '1';
-      SW0 <= '0';
+      SW0 <= '1';
       SW1 <= '0';
       wait for 100 ns;
       reset <= '0';
