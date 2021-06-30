@@ -1,21 +1,21 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
+-- Company:
+-- Engineer:
+--
 -- Create Date: 06/29/2021 09:19:53 AM
--- Design Name: 
+-- Design Name:
 -- Module Name: controller - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
+-- Project Name:
+-- Target Devices:
+-- Tool Versions:
+-- Description:
+--
+-- Dependencies:
+--
 -- Revision:
 -- Revision 0.01 - File Created
 -- Additional Comments:
--- 
+--
 ----------------------------------------------------------------------------------
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
@@ -66,7 +66,7 @@ ARCHITECTURE Behavioral OF controller IS
     SIGNAL addra_forward_next, addra_forward_reg, addra_reverse_next, addra_reverse_reg, pointer_next, pointer_reg : STD_LOGIC_VECTOR (18 DOWNTO 0);
     SIGNAL first_next, first_reg : STD_LOGIC;
     SIGNAL sample_in_audio_next, sample_in_audio_reg : STD_LOGIC_VECTOR (sample_size - 1 DOWNTO 0);
-    
+
 BEGIN
 
     SYNC_PROC : PROCESS (clk, reset)
@@ -90,6 +90,7 @@ BEGIN
         END IF;
     END PROCESS;
 
+    -- Controlpath
     PROCESS (state_reg, addra_forward_reg, addra_reverse_reg, pointer_reg, first_reg, sample_in_audio_reg, BTNL, BTNR, BTNC, SW0, SW1, sample_out_audio, sample_out_ready_audio, sample_request_audio, sample_out_filter, sample_out_ready_filter, douta)
     BEGIN
         state_next <= IDLE;
@@ -198,11 +199,12 @@ BEGIN
         END CASE;
     END PROCESS;
 
+    -- Datapath
     PROCESS (SW1, SW0, addra_forward_reg, addra_reverse_reg)
     BEGIN
-        addraa <= addra_forward_reg;
+        addra <= addra_forward_reg;
         IF (SW1 = '0' AND SW0 = '1') THEN
-            addraa <= addra_reverse_reg;
+            addra <= addra_reverse_reg;
         END IF;
     END PROCESS;
 
